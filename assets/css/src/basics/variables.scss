@@ -1,0 +1,28 @@
+
+/* COLORS */
+$black: #333;
+$darkGray:#454545;
+$gray: #b1b8c1;
+$white:#fff;
+
+$magenta: #ff1053;
+$violet: #6c6ea0;
+$skyBlue: #66c7f4;
+$cornflower: #6495ED;
+
+$error: #d83030;
+$success:limegreen;
+
+/* FONTS */
+$base: "Didact Gothic", sans-serif;
+
+/* BUTTONS */
+$btn-base-color:$darkGray;
+$btn-text:#fff;
+$btn-hover:#000;
+
+@mixin boxShadow(){
+    -webkit-box-shadow: 0px 13px 25px -13px rgba(0,0,0,0.21);
+    -moz-box-shadow: 0px 13px 25px -13px rgba(0,0,0,0.21);
+    box-shadow: 0px 13px 25px -13px rgba(0,0,0,0.21);   
+}

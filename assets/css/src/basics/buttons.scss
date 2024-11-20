@@ -1,0 +1,79 @@
+@import 'variables';
+
+.btn{
+  font-family:$base; 
+  display:inline-block;
+  width:auto;
+  padding:16px 30px;
+  border-radius:2px;
+  background-color:$btn-base-color;
+  color:$btn-text;
+  text-transform: uppercase;
+  letter-spacing:1px;
+  font-weight:300;
+  font-size:.875rem;
+  border:0;
+  cursor:pointer;
+  transition: all 1s ease;
+
+  &:hover{
+    background-color:$btn-hover;
+    color:#fff;
+  }
+
+  &.btn-primary{
+    background-color:$magenta;
+    color:$white;
+
+    &:hover{
+      background-color:lighten($magenta, 10%);
+      color:$white;
+    }
+  }
+
+  &.btn-secondary{
+    background-color:$cornflower;
+    color:$white;
+
+    &:hover{
+      background-color:lighten($cornflower, 10%);
+      color:$white;
+    }
+  }
+
+  &.btn-tertiary{
+    background-color:$skyBlue;
+    color:$white;
+
+    &:hover{
+      background-color:lighten($skyBlue, 10%);
+      color:$white;
+    }
+  }
+
+  &.btn-small{
+    padding:7px 12px;
+  }
+
+  &.logout{
+   padding:6px 12px; 
+   margin: 0 14px
+  }
+
+  &[disabled]{
+    cursor:not-allowed;
+    opacity:.4;
+  }
+
+  & > .material-symbols-outlined{
+    font-size:1rem;
+  } 
+}
+
+#filterPanelTrigger{
+  color:white;
+  font-size:30px;
+  padding-left:21px;
+  line-height:1rem;
+  display: inline;
+}

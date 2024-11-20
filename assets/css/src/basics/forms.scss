@@ -1,0 +1,370 @@
+@import "variables";
+
+form {
+    text-align: left;
+}
+
+fieldset {
+    border: 0;
+    padding: 0;
+    margin: 0;
+
+    & legend {
+        display: none;
+    }
+}
+
+label {
+    display: block;
+    padding: 0 0 8px 0;
+    width: 100%;
+    color: $darkGray;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 300px;
+    color: $violet;
+
+    & mark {
+        color: $btn-hover;
+    }
+}
+
+[data-form-msg] {
+    position: relative;
+    display: none;
+    width: 100%;
+    text-align: left;
+    background-color: #ddd;
+    border-radius: 2px;
+    color: #fff;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 14px;
+    -webkit-box-shadow: 0px 13px 25px -13px rgba(0, 0, 0, 0.21);
+    -moz-box-shadow: 0px 13px 25px -13px rgba(0, 0, 0, 0.21);
+    box-shadow: 0px 13px 25px -13px rgba(0, 0, 0, 0.21);
+    margin-bottom: 20px;
+    padding: 8px 25px 8px 14px;
+
+    &:after {
+        position: absolute;
+        cursor: pointer;
+        content: "x";
+        color: #fff;
+        right: 0px;
+        top: 0px;
+        width: 30px;
+        height: 22px;
+        padding-top: 7px;
+        text-align: center;
+        font-weight: 500;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    &.active {
+        display: block;
+    }
+
+    &.error {
+        background-color: $error;
+    }
+
+    &.success {
+        background-color: $success;
+    }
+
+    &.info {
+        background-color: rgb(252, 200, 68);
+    }
+}
+
+[data-forgot-password] {
+    display: block;
+    color: $darkGray;
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: 300px;
+    margin-top: 22px;
+
+    &:hover {
+        color: $btn-hover;
+    }
+}
+
+.field-control {
+    position: relative;
+    flex: 1;
+
+    &.full {
+        flex: 1 1 100%;
+    }
+
+    &.half {
+        flex: 1 1 48%;
+    }
+
+    &.third {
+        flex: 1 1 31%;
+    }
+
+    &.fourth {
+        flex: 1 1 22%;
+    }
+
+    .settingsForm &{
+        margin-bottom:40px;
+
+        label{
+
+            small{
+                display: block;
+                width:auto;
+                max-width:500px;
+                line-height:16px;
+                margin-bottom:14px;
+            }
+
+        }
+    }
+    
+}
+
+.form-control {
+    &.inlineForm {
+        display: flex;
+        justify-content: space-between;
+        gap: 0 21px;
+        flex-wrap: wrap;
+    }
+}
+
+input,
+select,
+textarea {
+    display: block;
+    width: 100%;
+    margin-bottom: 22px;
+    padding: 20px;
+    font-size: 16px;
+    border: 1px solid #eee;
+    font-family: $base;
+    max-width:350px;
+
+    &::placeholder {
+        color: #ccc;
+    }
+
+    &:focus {
+        border-color: $cornflower;
+    }
+
+    .authenticationForms &{
+        max-width:100%;
+    }
+}
+
+select[multiple] {
+    padding: 0px;
+
+    & option {
+        padding: 6px;
+        background-color:#fff;
+
+        &[selected]{
+            background-color:$cornflower;
+        }
+
+        &:nth-child(odd){
+            background-color:#f9f9f9;
+        }
+    }
+}
+
+.fuzzySearch {
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    & input[type="search"] {
+        margin: 0;
+        background-color: transparent;
+        border: 0;
+        font-size: 18px;
+        min-width: 350px;
+        margin-left: 0;
+        height: 100%;
+        padding: 19px 14px;
+        background-color: rgba(255, 255, 255, 0.1);
+
+        &:focus {
+            background-color: rgba(255, 255, 255, 0.4);
+        }
+    }
+
+    & span {
+        background-color: $skyBlue;
+        padding: 16px;
+        height: 100%;
+        font-size: 28px;
+        color: $white;
+    }
+}
+
+.submit {
+    display: flex;
+    gap: 21px;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    & p {
+        text-align: left;
+    }
+
+    & button {
+        margin-left: auto;
+    }
+}
+
+.checkboxGroup{
+    margin: 10px 0 20px;
+    padding-left:15px;
+}
+
+.control {
+    font-family: arial;
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 7px;
+    padding-top: 0px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.control input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+label.control  {
+    color:#444;
+}
+.control_indicator {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background: #e6e6e6;
+    border: 0px solid #000000;
+    border-radius: 3px;
+}
+.control:hover input ~ .control_indicator,
+.control input:focus ~ .control_indicator {
+    background: #cccccc;
+}
+
+.control input:checked ~ .control_indicator {
+    background: $cornflower;
+}
+.control:hover input:not([disabled]):checked ~ .control_indicator,
+.control input:checked:focus ~ .control_indicator {
+    background: $cornflower;
+}
+.control input:disabled ~ .control_indicator {
+    background: #e6e6e6;
+    opacity: 0.6;
+    pointer-events: none;
+}
+.control_indicator:after {
+    box-sizing: unset;
+    content: "";
+    position: absolute;
+    display: none;
+}
+.control input:checked ~ .control_indicator:after {
+    display: block;
+}
+.control-checkbox .control_indicator:after {
+    left: 8px;
+    top: 4px;
+    width: 3px;
+    height: 8px;
+    border: solid #ffffff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+.control-checkbox input:disabled ~ .control_indicator:after {
+    border-color: #7b7b7b;
+}
+.control-checkbox .control_indicator::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4.5rem;
+    height: 4.5rem;
+    margin-left: -1.3rem;
+    margin-top: -1.3rem;
+    background: $cornflower;
+    border-radius: 3rem;
+    opacity: 0.6;
+    z-index: 99999;
+    transform: scale(0);
+}
+@keyframes s-ripple {
+    0% {
+        transform: scale(0);
+    }
+    20% {
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1);
+    }
+}
+@keyframes s-ripple-dup {
+    0% {
+        transform: scale(0);
+    }
+    30% {
+        transform: scale(1);
+    }
+    60% {
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1);
+    }
+}
+.control-checkbox input + .control_indicator::before {
+    animation: s-ripple 250ms ease-out;
+}
+.control-checkbox input:checked + .control_indicator::before {
+    animation-name: s-ripple-dup;
+}
+
+.serviceChargeDashboardTable {
+    input {
+        margin-bottom: 0;
+        min-width: 35px;
+        max-width: 70px;
+        padding: 5px;
+        width: auto;
+        display: inline-block;
+    }
+}
+
+.employeeJobMainJob{
+
+    label.control{
+        margin:0;
+        padding-bottom:0;
+    }
+
+}

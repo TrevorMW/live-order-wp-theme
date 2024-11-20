@@ -1,0 +1,51 @@
+{
+  "name": "basicwptheme",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "dev": "webpack --mode development",
+    "prod": "webpack --mode production",
+    "watch": "webpack --watch --mode development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TrevorMW/BasicWPTheme.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TrevorMW/BasicWPTheme/issues"
+  },
+  "homepage": "https://github.com/TrevorMW/BasicWPTheme#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "babel-loader": "^8.2.3",
+    "clean-webpack-plugin": "^4.0.0",
+    "css-loader": "^6.5.1",
+    "expose-loader": "^3.1.0",
+    "mini-css-extract-plugin": "^2.4.5",
+    "node-sass": "^6.0.1",
+    "sass-loader": "^12.3.0",
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.9.1",
+    "socket.io-client": "^4.6.0",
+    "vue-socket.io-extended": "^5.0.0-alpha.5"
+  },
+  "dependencies": {
+    "air-datepicker": "^3.5.0",
+    "axios": "^1.6.8",
+    "css-minimizer-webpack-plugin": "^6.0.0",
+    "jquery": "^3.6.0",
+    "lodash": "^4.17.21",
+    "pinia": "^2.1.7",
+    "radix-vue": "^1.5.2",
+    "socket.io-client": "^4.7.5",
+    "vue": "^3.4.21",
+    "vue-cli": "^2.9.6",
+    "vue-loader": "^17.4.2",
+    "vue-router": "^4.3.0"
+  }
+}

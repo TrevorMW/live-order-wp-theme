@@ -1,0 +1,22 @@
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/sass-loader/dist/cjs.js!./node_modules/vue-loader/dist/index.js??ruleSet[1].rules[4].use[0]!./assets/vue/components/NoItems.vue?vue&type=style&index=0&id=65edc106&lang=scss ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************/
+.noItemsFound {
+  text-align: center;
+  color: #ccc;
+  padding: 50px 0;
+}
+.noItemsIcon span {
+  font-size: 50px;
+  font-weight: 300;
+}
+.noItemsMessage {
+  max-width: 400px;
+  margin: 0 auto;
+}
+.noItemsMessage p {
+  color: #ccc;
+  margin: 10px 0 21px 0;
+}
+
+/*# sourceMappingURL=assets_vue_views_Profile_vue.min.css.map*/

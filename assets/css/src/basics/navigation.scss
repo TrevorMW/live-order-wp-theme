@@ -1,0 +1,68 @@
+@import 'variables';
+
+
+nav{
+  display: block;
+  width:100%;
+
+  & ul{
+    display: inherit;
+    width:inherit;
+    margin:0;
+    padding:0;
+  }
+
+  & li{
+    display: block;
+    width:100%;
+    text-align: left;
+    
+    &.w-icon{
+      color:#444;
+      transition: color .1s ease;
+
+      &:hover{
+        color:#aaa;
+      }
+    }
+
+    & span{
+      flex:1;
+      padding-left:14px;
+      
+      &:first-child{
+        font-size:22px;
+        flex: 0 0 32px;
+        text-align: center;
+        padding:0;
+        transition: color .1s ease;;
+      }
+
+      & i{
+        margin-top:5px;
+      }
+    }
+  }
+
+  & a{
+    padding:0 0 14px;
+    display: flex;
+    align-items: center;
+    cursor:pointer;
+  }
+}
+
+.menuSections{
+  text-align: left;
+  padding:30px 21px 21px;
+
+  & header{
+    padding-bottom:7px;
+    margin-bottom:14px;
+  }
+
+  & h5{
+    color:#aaa;
+    line-height:1.2;
+  }
+}

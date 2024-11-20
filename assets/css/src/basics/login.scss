@@ -1,0 +1,67 @@
+@import 'variables';
+
+body{
+  position:relative; 
+  font-family:$base; 
+  background: url('../images/loginBG.png') repeat bottom right ;
+}
+
+.wrapper{
+
+    &.loginWrapper{
+        text-align:center;
+        min-height:100vh;
+    }
+}
+
+.container{
+  max-width:1200px;
+  margin: 0 auto;
+}
+
+.table{
+    display: table;
+    width:100%;
+}
+
+.tableCell{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+main{
+
+  .loginWrapper &{
+    width:800px;
+    margin: 0 auto;
+  }
+}
+
+.loginLogo{
+    margin-bottom:20px;
+    margin-top:-100px;
+    
+    & img{
+        width:80px;
+    }
+
+    & h1{
+        font-size:36px;
+        margin:12px 0;
+        text-transform:uppercase;
+        font-family:$base;
+        font-weight:300;
+        letter-spacing:1px;
+    }   
+}
+
+
+#wpadminbar {
+    display: none !important;
+}
+
+@import 'forms';
+@import 'components/_loader';
+@import 'components/_tabs';
+@import 'buttons';
+@import 'utilities';

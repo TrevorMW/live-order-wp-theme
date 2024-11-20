@@ -1,0 +1,41 @@
+.reportsGrid{
+    display: flex;
+    justify-content:flex-start;
+    gap:21px;
+    flex-wrap: wrap;
+}
+
+.reportTile{
+    cursor:pointer;
+    border:1px solid #eee;
+    border-radius:3px;
+    overflow:hidden;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background-color:#f9f9f9;
+    color:#444;
+    width:100%;
+    max-width:32%;
+    transition:all .3s ease;
+
+    &:hover{
+        border-color:$violet;
+    }
+
+    & div{
+        flex:1;
+        padding:14px 14px 14px 0;
+
+        &:first-child{
+            flex: 0 0 40px;
+            padding:14px 7px 14px 20px;
+            display: flex;
+            justify-content: center;
+
+            & span{
+                font-size:40px;
+            }
+        }
+    }
+}

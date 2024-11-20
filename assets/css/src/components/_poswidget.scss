@@ -1,0 +1,33 @@
+.pos-widget{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:14px;
+    border-radius:3px;
+    border:1px solid #ddd;
+    gap:14px;
+    background-color:#f9f9f9;
+    max-width:425px;
+
+    & div{
+        text-align: left;
+        flex:0;
+
+        & h4{
+            margin-bottom:8px;
+        }
+
+        &:first-child{
+            flex: 0 0 60px;
+
+            & img{
+                width:40px;
+                margin: 0 auto;
+            }
+        }
+
+        &.connectionDetails{
+            flex: 1 1 200px;
+        }
+    }
+}

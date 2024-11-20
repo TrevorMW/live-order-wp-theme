@@ -1,0 +1,40 @@
+.tooltip{
+    display: none;
+    position: absolute;
+    bottom:100%;
+    padding:7px;
+    font-size:.65rem;
+    color:#444;
+    background-color:$white;
+    min-width:200px;
+    border:1px solid #ccc;
+    z-index:15;
+
+    &.active{
+        display: block;
+    }
+    
+    &.toolTipTable {
+        min-width:300px;
+        padding:0;
+    
+        tbody {
+    
+            th,td{
+                font-size:.75rem;
+            }
+    
+            th{
+                width:140px;
+                text-align:left;
+                background-color:#eee;
+            }
+    
+            td{
+                background-color:$white;
+                border-bottom:1px solid #eee;
+            }
+        }
+    }
+}
+

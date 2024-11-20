@@ -1,0 +1,204 @@
+@import 'variables';
+
+
+table{
+    display: table;
+    width:100%;
+    padding:0;
+    border-collapse:collapse;
+}
+
+tr{
+    &:first-child{
+        border:0;
+    }
+
+    tbody & {
+        &:nth-child(even){
+            background-color:#f9f9f9;
+        }
+        
+        &:hover{
+            background-color:#eee;
+        }
+    }
+}
+
+th{
+    padding:8px;
+
+    tr &{
+        font-size:1.05rem;
+        text-transform:capitalize;
+        color:#444;
+        font-weight:300;
+    }
+
+    &.totalWeeklyCommission{
+        min-width:125px;
+    }
+}
+
+td{
+    padding:8px;
+    font-size:1rem;
+
+    & .individualCommissionPerDay{
+       position: relative;
+
+       &.nonCompliant{
+        background-color:cornsilk;
+       }
+    }
+
+    & .hoursAndPts{
+        display: flex;
+        gap: 0;
+        flex-direction: column;
+
+        & small{
+            flex: 1;
+            align-content:center;
+
+            // &:last-child{
+            //     background-color:cornsilk;
+            // }
+        }
+    }
+}
+
+.serviceChargeDashboardTable{
+    border-collapse: collapse;
+
+    & .teamMemberName{
+        font-size:.9rem;
+
+        & small{
+            font-size:9px;
+        }
+    }
+
+    & .mainRowHeaders{
+        background-color:#eee;
+        color:#444;
+    }
+
+    & .currentReportingRange{
+        background-color:$cornflower;
+        color:$white;
+    }
+
+    & .totalSvcChargePerDay{
+        background-color:#aaa;
+        color:$white;
+        padding: 0;
+
+        &.totalSvcChargeHeader{
+            padding: 14px 0 14px;
+        }
+    }
+
+    & .teamMemberDetails{
+        min-width:200px;
+    }
+
+
+    & .dateRangeDayHeaders{
+        min-width:950px;
+        display: flex;
+        padding-left:0;
+        padding-right:0;
+        justify-content: space-evenly;
+        align-items:center;
+
+        & div{
+            flex:1;
+            padding: 10px;
+            text-align: center;
+        }
+    }
+
+    & .totalPtsHeader,
+    & .totalPtsData{
+        background-color:cornsilk;
+    }
+
+    & .teamMember{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap:14px;
+    }
+
+    & .teamMemberShiftData{
+        padding:0;
+        min-width:900px;
+        text-align: center;
+
+        & .no-shifts{
+            background-color:#ccc;
+
+        }
+        
+        & > div{
+            display: flex;
+            height:100%;
+            justify-content: space-evenly;
+            align-items: center;
+            
+            & div{
+                flex:1;
+                text-align: center;
+            }
+        }
+    }
+
+    & .shiftBox{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border:1px solid #eee;
+        border-left:0;
+        border-top:0;
+        position: relative;
+
+        &:first-child{
+            border-left:1px solid #eee;
+        }
+        
+        & > div{
+            min-height:50px;
+            align-content: center;
+        }
+    }
+
+    & .wageCompliance,
+    & .wageInformation{
+        position: absolute;
+        right:2px;
+        top:2px;
+        cursor: pointer;
+
+        & span{
+            color:green;
+            font-size:.65rem;
+            display: block;
+        }
+    } 
+
+    & .wageInformation{
+        bottom:2px;
+        top:auto;
+
+        & span{
+            color:rgb(178, 132, 14);
+            font-size:.65rem;
+            display: block;
+        }
+    }
+    
+    .nonCompliant .wageCompliance span{
+        color:$error;
+    }
+}
+

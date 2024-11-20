@@ -1,0 +1,115 @@
+.timePeriodSelectorWrapper{
+    position: relative;
+    z-index: 9;
+}
+
+.timePeriodSelector{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color:#f9f9f9;
+    border:1px solid #eee;
+    border-radius:3px;
+
+    & .dateRangeWrapper{
+        // border-left: 1px solid #eee;
+        // border-right: 1px solid #eee;
+        text-align: center;
+        width:250px;
+    }
+    
+    & .prev,
+    & .next{
+        flex: 0 0 35px;
+        text-align:center;
+        display: flex;
+        align-items: center;
+
+        & button{
+            display: block;
+            border:0;
+            padding: 9px 14px;
+            background-color:transparent;
+            transition: all .3s ease;
+
+            &:hover{
+                background-color:#eee;
+                color:$magenta;
+            }
+        }
+    }
+
+    & .dateRange{
+        font-size:1.09rem;
+        padding: 15px 14px;
+        transition: all .3s ease;
+
+        &:hover{
+            cursor: pointer;
+            background-color:#eee;
+            color:$magenta;
+        }
+    }
+}
+
+.timeSelectorDatePickerWrapper{
+    min-width:410px;
+    background-color:#f9f9f9;
+    border:1px solid #eee;
+    position: absolute;
+    right:calc(100% + 14px);
+    left:auto;
+    top:0;
+    padding:14px;
+    width:100%;
+    display: none;
+
+    &.active{
+        display: block;
+    }
+
+    & .timeSelectorDatePicker{
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 21px;
+        margin-bottom:14px;
+
+        & > div{
+
+            &:last-child{
+                flex: 0 0 100px;
+            }
+        }
+    }
+
+    & .calendarInputs{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+    }
+
+    & .btn{
+        width:100%;
+        margin-bottom:14px;
+        font-size:.65rem;
+        letter-spacing:0;
+        text-transform: capitalize;
+    }
+}
+
+nav.air-datepicker-nav{
+    width:auto;
+}
+
+.calendarInputs input{
+    margin: 0;
+    min-width:0;
+    width:100%;
+}
+
+#calendar{
+    max-width:300px;
+    margin-bottom:21px;
+}
