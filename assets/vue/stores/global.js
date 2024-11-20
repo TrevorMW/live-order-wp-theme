@@ -73,6 +73,13 @@ export const globalStore = defineStore('globalStore', {
         return resp;
       });
     },
+    logUserOut: async function (data) {
+      const url = core.ajaxUrl;
+
+      return await axios.post(url, data).then((resp) => {
+          window.location.reload();
+      });
+  },
     resetUserPassword: async function(data){
       const ns = noticeStore();
 

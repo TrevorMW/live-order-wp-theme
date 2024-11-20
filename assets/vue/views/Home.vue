@@ -103,6 +103,7 @@ import { loaderStore } from "../stores/loader.js";
 
 import { updateIsForMerchant } from "../helpers/webhookHelper.js";
 
+import axios from "Axios";
 import routes from '../../js/src/routes.js';
 
 import Authentication from '../views/Authentication.vue';
@@ -215,7 +216,6 @@ export default {
             this.ids.merchantPost = routeParams.merchant_post;
             this.ids.locationPost = routeParams.location_post;
             this.ids.userID = routeParams.user_id;
-
         })
 
         this.loadGlobalData();
@@ -229,8 +229,7 @@ export default {
             username: (store) => store.user.username,
             email: (store) => store.user.email,
             id: (store) => store.user.id,
-            action: (store) => store.endpoints.logout.action,
-            nonce: (store) => store.endpoints.logout.nonce,
+            endpoints: (store) => store.endpoints,
             currentRestaurant: (store) => store.currentRestaurant,
         }),
         ...mapState(scStore, {
@@ -253,15 +252,15 @@ export default {
         ...mapActions(scStore, ['loadData']),
         ...mapActions(noticeStore, ['hideNotice']),
         logUserOut: function () {
+            const gs = globalStore();
+
             const url = core.ajaxUrl;
             const data = new FormData();
 
-            data.append("action", this.action);
-            data.append("nonce", this.nonce);
+            data.append("action", this.endpoints.logout.action);
+            data.append("nonce", this.endpoints.logout.nonce);
 
-            axios.post(url, data).then((resp) => {
-                window.location.reload();
-            });
+            gs.logUserOut(data);
         },
         handleUnsetRedirect: function () {
             this.$router.push("/profile");
@@ -278,9 +277,6 @@ export default {
                     });
                 }
             });
-        },
-        editRestaurant: function () {
-            this.$router.push({ name: 'Restaurant', params: { id: this.currentRestaurant.ID } });
         },
         showNavItem: function (route, scope) {
             let shouldShow = true;
